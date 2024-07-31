@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+  <settings>
+    <!-- Enable auto-mapping of column names to JavaBean property names -->
+    <setting name="mapUnderscoreToCamelCase" value="true" />
+  </settings>
+
+  <!-- Define type aliases for MyBatis mappers -->
+  <typeAliases>
+    <typeAlias alias="Book" type="dev.v4jp.cebooklub.model.Book" />
+  </typeAliases>
+
+  <!-- Specify mapper locations -->
+  <mappers>
+    <mapper resource="./mapper/BookMapper.xml" />
+    <!-- Add more mapper locations as needed -->
+  </mappers>
+</configuration>
