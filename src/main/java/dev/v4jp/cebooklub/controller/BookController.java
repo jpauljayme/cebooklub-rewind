@@ -16,7 +16,7 @@ public class BookController {
 
   @GetMapping("/books")
   public ModelAndView list() {
-    ModelAndView mv = new ModelAndView("books/list");
+    ModelAndView mv = new ModelAndView("list");
     mv.addObject("books", bookService.readBooks());
     return mv;
   }
