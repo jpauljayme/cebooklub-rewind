@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS tbl_book(
     author              VARCHAR(40) NOT NULL,
     body                TEXT NOT NULL,
     image_path          VARCHAR(150),
-    date_read           DATE NOT NULL ,
+    date_read           DATE NOT NULL,
     t_date_created        DATE NOT NULL,
     t_date_updated        DATE NOT NULL
 );

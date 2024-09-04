@@ -2,8 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="dev.v4jp.cebooklub.mapper.BookMapper">
-  <select id="selectBooks" resultType="dev.v4jp.cebooklub.model.Book">
+
+  <resultMap id="Book" type="Book">
+<!--    <result property="imagePath" column="image_path" />-->
+<!--    <result property="dominantColor" column="dominant_color" />-->
+<!--    <result property="dateRead" column="dateRead"/>-->
+    <result property="dateCreated" column="t_date_created "/>
+    <result property="dateUpdated" column="t_date_updated"/>
+  </resultMap>
+
+  <select id="selectBooks" resultType="Book">
     SELECT *
-      FROM tbl_book;
+      FROM tbl_book
   </select>
+
+  <update id="updateDominantColor">
+    UPDATE tbl_book
+      SET dominant_color = #{dominantColor}
+    WHERE id = #{id}
+  </update>
 </mapper>

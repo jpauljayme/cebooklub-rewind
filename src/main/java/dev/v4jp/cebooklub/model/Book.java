@@ -22,12 +22,14 @@ public class Book {
   @NotBlank
   String body;
 
-  String image_path;
+  String imagePath;
 
   @NotBlank
-  LocalDate date_read;
+  LocalDate dateRead;
 
-  LocalDate t_date_created;
+  LocalDate dateCreated;
 
-  LocalDate t_date_updated;
+  LocalDate dateUpdated;
+
+  String dominantColor;
 }
