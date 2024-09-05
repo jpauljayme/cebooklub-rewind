@@ -16,18 +16,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BookController {
 
-  @Value("${cloudfront.url}")
-  private String cloudfrontUrl;
+    @Value("${cloudfront.url}")
+    private String cloudfrontUrl;
 
-  private final BookService bookService;
+    private final BookService bookService;
 
-  @GetMapping("/books")
-  public String list(Model model) {
-    List<Book> books = bookService.readBooks();
+    @GetMapping("/books")
+    public String list(Model model) {
+        List<Book> books = bookService.readBooks();
 
-    model.addAttribute("books", books );
-    model.addAttribute("prefix", cloudfrontUrl);
+        model.addAttribute("books", books);
+        model.addAttribute("prefix", cloudfrontUrl);
 
-    return "list";
-  }
+        return "list";
+    }
 }
