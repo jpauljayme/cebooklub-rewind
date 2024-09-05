@@ -30,5 +30,3 @@ logging:
   level:
     org.springframework: DEBUG
     org.mybatis: DEBUG
-    com.zaxxer.hikari.HikariDataSource: DEBUG
-#    jdbc.sqltiming: DEBUG
