@@ -8,9 +8,15 @@
   <title>Cebooklub Rewind</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+<!--  css-->
   <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" th:rel="stylesheet" />
   <link rel="stylesheet" type="text/css" th:href="@{css/index.css}" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.umd.js"></script>
+
+  <!--  font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,16 +27,22 @@
         Cebooklub
       </a>
     </nav>
-    <div class="heading">
-      <h1>2023</h1>
-      <h1>BOOK REWIND</h1>
-      <h3>Take a look at the stories all of us have swam into,
-        from the depths of a woman’s consciousness in the mundane,
-        to the small gestures of love in the midst of despair, and then some...</h3>
+    <div class="hero-content">
+      <div class="hero-text-container">
+        <h1 class="heading-style-h1">2023</h1>
+      </div>
+      <div class="hero-text-container">
+        <h1 class="heading-style-h1">BOOK REWIND</h1>
+      </div>
+      <div class="hero-subtext-container">
+        <p class="hero-subtext">Take a look at the stories all of us have swam into,
+          from the depths of a woman’s consciousness in the mundane,
+          to the small gestures of love in the midst of despair, and then some...
+        </p>
+      </div>
     </div>
   </header>
-  <div>
-  </div>
+
   <section layout:fragment="content"></section>
 
   <footer class="footer mt-auto bg-dark py-4 mt-5">

@@ -5,16 +5,18 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
 <body>
-<section class="books" layout:fragment="content" th:each="book : ${books}">
-  <div class="books__row"
-       th:style="'background-color: ' + ${book.dominantColor}"
-  >
-    <div class="books__column books__column--info">
-      <p th:text="${book.title}"></p>
-      <p th:text="${book.body}"> </p>
-    </div>
-    <div class="books__column books__column--image">
-      <img th:src="${prefix + book.imagePath}" class="books__image">
+<section class="books" layout:fragment="content" >
+  <div th:each="book : ${books}">
+    <div class="books__row"
+         th:style="'background-color: ' + ${book.dominantColor}"
+    >
+      <div class="books__column books__column--info">
+        <p th:text="${book.title}"></p>
+        <p th:text="${book.body}"> </p>
+      </div>
+      <div class="books__column books__column--image">
+        <img th:src="${prefix + book.imagePath}" class="books__image">
+      </div>
     </div>
   </div>
 </section>
