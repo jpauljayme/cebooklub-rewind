@@ -21,7 +21,7 @@ public class BookController {
 
     private final BookService bookService;
 
-    @GetMapping("/books")
+    @GetMapping("/cebooklub-rewind")
     public String list(Model model) {
         List<Book> books = bookService.readBooks();
 
@@ -29,5 +29,10 @@ public class BookController {
         model.addAttribute("prefix", cloudfrontUrl);
 
         return "list";
+    }
+
+    @GetMapping(path = "/")
+    String emptyPath() {
+        return "redirect:/books";
     }
 }
