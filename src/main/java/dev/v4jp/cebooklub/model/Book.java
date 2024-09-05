@@ -10,24 +10,26 @@ import java.time.LocalDate;
 @Value
 @Builder
 public class Book {
-  @Id
-  long id;
+    @Id
+    long id;
 
-  @NotBlank
-  String title;
+    @NotBlank
+    String title;
 
-  @NotBlank
-  String author;
+    @NotBlank
+    String author;
 
-  @NotBlank
-  String body;
+    @NotBlank
+    String body;
 
-  String image_path;
+    String imagePath;
 
-  @NotBlank
-  LocalDate date_read;
+    @NotBlank
+    LocalDate dateRead;
 
-  LocalDate t_date_created;
+    LocalDate dateCreated;
 
-  LocalDate t_date_updated;
+    LocalDate dateUpdated;
+
+    String dominantColor;
 }
