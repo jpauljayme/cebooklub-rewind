@@ -32,4 +32,6 @@ public class Book {
     LocalDate dateUpdated;
 
     String dominantColor;
+
+    String recapUrl;
 }

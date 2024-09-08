@@ -33,6 +33,6 @@ public class BookController {
 
     @GetMapping(path = "/")
     String emptyPath() {
-        return "redirect:/books";
+        return "redirect:/cebooklub-rewind";
     }
 }

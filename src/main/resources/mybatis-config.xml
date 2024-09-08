@@ -6,7 +6,6 @@
   <settings>
     <!-- Enable auto-mapping of column names to JavaBean property names -->
     <setting name="mapUnderscoreToCamelCase" value="true" />
-    <setting name="autoMappingUnknownColumnBehavior" value="NONE"/>
   </settings>
 
   <!-- Define type aliases for MyBatis mappers -->

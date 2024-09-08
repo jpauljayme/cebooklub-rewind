@@ -13,4 +13,6 @@ public interface BookMapper {
   void updateDominantColor(
           @Param("id") long id,
           @Param("dominantColor") String dominantColor);
+
+  List<Book> selectBooksOrderByDateRead();
 }
