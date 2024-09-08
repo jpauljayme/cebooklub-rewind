@@ -14,6 +14,12 @@
       FROM tbl_book
   </select>
 
+  <select id="selectBooksOrderByDateRead" resultType="Book">
+    SELECT *
+      FROM tbl_book
+        ORDER BY date_read
+  </select>
+
   <update id="updateDominantColor">
     UPDATE tbl_book
       SET dominant_color = #{dominantColor}

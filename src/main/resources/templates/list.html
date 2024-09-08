@@ -3,10 +3,10 @@
       layout:decorate="~{template.html}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout " xmlns:th="http://www.w3.org/1999/html">
 <section class="books" layout:fragment="content">
-    <div th:each="book : ${books}">
+    <th:block th:each="book : ${books}">
         <div th:replace="~{fragments/_book :: bookFragment(book=${book}, prefix=${prefix})}"></div>
-    </div>
+    </th:block>
 </section>
 </html>

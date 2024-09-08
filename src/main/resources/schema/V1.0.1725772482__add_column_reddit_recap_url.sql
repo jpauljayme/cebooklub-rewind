@@ -1,0 +1,2 @@
+ALTER TABLE tbl_book
+ADD COLUMN recap_url VARCHAR;
