@@ -8,13 +8,14 @@
      class="books__row book--hidden"
      th:style="'background-color: ' + ${book.dominantColor}"
 >
-    <div class="book__section--header">
-        <h1 class="book__title" th:text="${book.title.toUpperCase()}"></h1>
-        <h2 class="book__author" th:text="${book.author.toUpperCase()}"></h2>
-    </div>
 
     <div class="book__section--cover">
         <img th:src="${prefix + book.imagePath}" class="book__image">
+    </div>
+
+    <div class="book__section--header">
+        <h1 class="book__title" th:text="${book.title.toUpperCase()}"></h1>
+        <h2 class="book__author" th:text="${book.author.toUpperCase()}"></h2>
     </div>
 
     <div class="book__section--body">
@@ -22,8 +23,8 @@
             <p class="book__body" th:text="${book.body}"> </p>
     </div>
 
-    <div class="book__section--recap">
-        <a th:href="${book.recapUrl}" target="_blank" class="recap__text">READ RECAP ON REDDIT</a>
+    <div th:hidden="${book.recapUrl == null or book.recapUrl.isEmpty()}" class="book__section--recap">
+        <a th:href="${book.recapUrl}" target="_blank" class="recap__text">RECAP ON REDDIT</a>
     </div>
 
     </div>

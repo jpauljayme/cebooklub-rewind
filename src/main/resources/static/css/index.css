@@ -36,27 +36,32 @@ body{
   background-color: var(--soft-beige);
 }
 
+h1, h4, p {
+    margin-bottom: 0;
+}
+
 .grid__wrapper{
   display: grid;
-  grid-template-rows: max-content max-content 5rem;
+  grid-template-rows: repeat(3, auto);
   grid-template-areas:
     'header'
     'books'
     'footer';
-  padding: 0 100px;
   gap: 20px;
+  justify-items: center;
+  align-items: center;
 }
 
 header{
   display: grid;
   grid-area: header;
   grid-template-rows: auto 1fr;
+  justify-items: center;
 }
 
 .header__nav{
-  height: 100px;
-  padding-top: 10px;
-
+    justify-self: start;
+    padding-top: 10px;
 }
 
 .nav__a{
@@ -74,6 +79,16 @@ header{
 
 .hero-content{
     text-align: center;
+    display:grid;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.heading-book,
+.heading-rewind {
+    display: inline; /* Default: Keep words on the same line */
 }
 
 .heading-style-h1{
@@ -86,7 +101,6 @@ header{
     max-width: 35rem;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .hero-subtext{
@@ -97,8 +111,7 @@ header{
 .books{
   grid-area: books;
   display: grid;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin: 0 300px;
   margin-top: 100px;
   gap: 150px;
   justify-items: center;
@@ -107,18 +120,17 @@ header{
 .books__row{
   display: grid;
   grid-template-areas:
-    'header cover'
-    'body recap';
-  grid-template-columns: 1fr auto;
-  grid-template-rows: repeat(2, auto);
-
-  justify-content: start;
-
+    'cover header'
+    'body body'
+    'recap recap';
+  grid-template-columns: min-content auto;
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
   min-height: 60vh;
   border-radius: 20px;
-  padding: 25px;
-  column-gap: 20px;
+  padding: 40px;
   color: white;
+  margin-bottom: 100px;
 }
 
 .books__row:hover{
@@ -135,17 +147,17 @@ header{
 
 .book__title{
     font-family: 'Thunder', sans-serif;
-    font-size: 70px;
+    font-size: 50px;
 }
 
 .book__author{
     font-family: 'Thunder', sans-serif;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .book__section--cover{
     grid-area: cover;
-    max-width: 200px;
+    width: 200px;
 }
 
 .book__image {
@@ -157,7 +169,7 @@ header{
 
 .book__section--body{
     grid-area: body;
-    text-align: end;
+    text-align: justify;
 }
 
 .book__dateRead{
@@ -173,13 +185,13 @@ header{
 
 .book__section--recap{
     grid-area: recap;
-    display: flex;
+/*    display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: flex-end;*/
 }
 
 .recap__text{
-    font-size:30px;
+    font-size:20px;
     margin: 0px;
     padding-bottom: 6px;
     text-decoration: none;
@@ -206,4 +218,84 @@ header{
 
 footer{
   grid-area: footer;
+}
+
+@media (max-width: 768px){
+    .grid__wrapper{
+        gap: 10px;
+    }
+
+    header{
+    }
+
+    .header__nav{
+       padding-left: 50px;
+    }
+
+    .nav__a{
+        font-size: 3rem;
+    }
+
+    .hero-content{
+        min-height: 100vh;
+    }
+
+    .heading-book {
+        display: block; /* "BOOK" will be on its own line */
+    }
+
+    .heading-rewind {
+        display: block; /* "REWIND" will be on a new line, below "BOOK" */
+    }
+
+    .heading-style-h1 {
+            font-size: 7rem; /* Adjust text size for smaller screens */
+    }
+
+    .hero-subtext-container{
+        padding: 0 50px;
+    }
+
+
+    .hero-subtext {
+        font-size: 1.2rem; /* Adjust the subtext for mobile */
+        line-height: 1.4; /* Make sure it's easily readable */
+    }
+
+    .books{
+        gap: 300px;
+        margin: 0 50px;
+    }
+
+    .books__row{
+          grid-template-areas:
+            'cover header'
+            'body body'
+            'recap recap'
+            ;
+          grid-template-columns: 1fr auto;
+          grid-template-rows: repeat(3, auto);
+          column-gap: 10px;
+        padding: 20px;
+    }
+
+    .book__section--cover{
+        width: 150px;
+    }
+
+    .book__title{
+        font-size: 30px;
+    }
+
+    .book__author{
+        font-size: 18px;
+    }
+
+    .book__body{
+        font-size: 14px;
+    }
+
+    .recap__text{
+        font-size: 16px;
+    }
 }
