@@ -263,7 +263,7 @@ footer{
     }
 
     .books{
-        gap: 300px;
+        gap: 100px;
         margin: 0 50px;
     }
 
@@ -274,9 +274,9 @@ footer{
             'recap recap'
             ;
           grid-template-columns: 1fr auto;
-          grid-template-rows: repeat(3, auto);
-          column-gap: 10px;
-        padding: 20px;
+          grid-template-rows: repeat(2, max-content) max-content;
+          padding: 30px;
+          min-height: 0;
     }
 
     .book__section--cover{
